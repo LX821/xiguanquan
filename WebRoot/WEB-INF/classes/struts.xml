@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8"/>
+     <constant name="struts.devMode" value="true" />
+     <!--Struts2中Action对象的创建交给spring完成-->
+     <constant name="struts.objectFactory" value="spring" />   
+       
+     <package name="user" namespace="/user" extends="struts-default">
+            <action name="user_*" class="com.xiguanquan.action.UserAction" method="{1}">     
+                <result name="message">/user_list.jsp</result>
+                <result name="show_view">/index.jsp</result>
+            </action>
+     </package>
+</struts>    
